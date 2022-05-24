@@ -2,16 +2,26 @@ package com.java.project;
 
 public class Produto {
     private  String nome;
-    private int quantidade;
+    private String  quantidade;
     private String categoria;
-    private double preco;
+    private String preco;
 
 
-    public Produto(String nome, int quantidade, String categoria, double preco) {
+    public Produto(String nome, String quantidade, String categoria, String preco) {
+
         this.nome = nome;
         this.quantidade = quantidade;
         this.categoria = categoria;
         this.preco = preco;
+
+    }
+    public void vizualizarDados(){
+
+        System.out.println("=====================================");
+        System.out.println(                "LISTAR:");
+        System.out.println("  Nome   -  Quantidade  _  Preço ");
+        System.out.println( nome + "  |  " + quantidade + "  |  " + preco );
+
     }
 
     public String getNome() {
@@ -22,11 +32,11 @@ public class Produto {
         this.nome = nome;
     }
 
-    public int getQuantidade() {
+    public String getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) {
+    public void setQuantidade(String quantidade) {
         this.quantidade = quantidade;
     }
 
@@ -38,11 +48,11 @@ public class Produto {
         this.categoria = categoria;
     }
 
-    public double getPreco() {
+    public String getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(String preco) {
         this.preco = preco;
     }
 }
