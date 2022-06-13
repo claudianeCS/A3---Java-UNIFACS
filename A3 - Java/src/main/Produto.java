@@ -1,26 +1,30 @@
-package com.java.project;
+package main;
 
-public class Produto {
+public class Produto extends Categoria  { //CLASSE FILHA.
     private  String nome;
     private String  quantidade;
-    private String categoria;
+    private String peso;
     private String preco;
 
 
-    public Produto(String nome, String quantidade, String categoria, String preco) {
-
+    public Produto(String nome, String quantidade, String peso, String preco, String nomeCategoria, String setor) {
+        super(nomeCategoria, setor);
         this.nome = nome;
         this.quantidade = quantidade;
-        this.categoria = categoria;
+        this.peso = peso;
         this.preco = preco;
 
     }
     public void vizualizarDados(){
 
-        System.out.println("=====================================");
-        System.out.println(                "LISTAR:");
-        System.out.println("  Nome   -  Quantidade  _  Preço ");
         System.out.println( nome + "  |  " + quantidade + "  |  " + preco );
+
+
+    }
+
+    public  void vizualizarDadosCompleto(){
+
+        System.out.println(nome + "  |  " + quantidade + "  |  " + peso + "  |  " + preco + "  |  " + getNomeCategoria() + "  |  " + getSetor());
 
     }
 
@@ -40,12 +44,13 @@ public class Produto {
         this.quantidade = quantidade;
     }
 
-    public String getCategoria() {
-        return categoria;
+
+    public String getPeso() {
+        return peso;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setPeso(String peso) {
+        this.peso = peso;
     }
 
     public String getPreco() {
@@ -55,4 +60,6 @@ public class Produto {
     public void setPreco(String preco) {
         this.preco = preco;
     }
+
+
 }
